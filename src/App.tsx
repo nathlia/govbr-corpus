@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
-import ButtonPage from "./pages/ButtonPage.jsx";
-import FormPage from "./pages/FormPage.jsx";
+import { useEffect, useState, type ComponentType } from "react";
+import ButtonPage from "./pages/ButtonPage";
+import FormPage from "./pages/FormPage";
 
-const PAGES = {
+type PageKey = "buttons" | "form";
+
+const PAGES: Record<PageKey, { label: string; component: ComponentType }> = {
   buttons: { label: "Botões", component: ButtonPage },
   form:    { label: "Formulário", component: FormPage },
 };
 
 // TC-B-xx → buttons, TC-F-xx → form
-const tabForCase = (id) => (id.startsWith("TC-F") ? "form" : "buttons");
+const tabForCase = (id: string): PageKey => (id.startsWith("TC-F") ? "form" : "buttons");
 
 export default function App() {
-  const [current, setCurrent] = useState(() => {
+  const [current, setCurrent] = useState<PageKey>(() => {
     const hash = window.location.hash.slice(1);
     return hash ? tabForCase(hash) : "buttons";
   });
@@ -37,7 +39,7 @@ export default function App() {
         <span style={{ color: "#fff", fontFamily: "Rawline, Raleway, sans-serif", fontWeight: 700, marginRight: "2rem" }}>
           Portal de Demonstração — gov.br DS
         </span>
-        {Object.entries(PAGES).map(([key, { label }]) => (
+        {(Object.entries(PAGES) as [PageKey, { label: string }][]).map(([key, { label }]) => (
           <button
             key={key}
             onClick={() => setCurrent(key)}

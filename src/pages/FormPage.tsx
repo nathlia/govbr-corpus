@@ -1,10 +1,12 @@
-const CASE_STYLE = {
+import type { CSSProperties } from "react";
+
+const CASE_STYLE: CSSProperties = {
   marginBottom: "3rem",
   borderLeft: "3px solid #dee2e6",
   paddingLeft: "1rem",
 };
 
-const ID_STYLE = {
+const ID_STYLE: CSSProperties = {
   fontSize: "11px",
   color: "#767676",
   fontFamily: "monospace",
