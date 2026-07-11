@@ -196,9 +196,9 @@ export default function FormPage() {
       <section id="TC-F-12" data-testid="TC-F-12" style={CASE_STYLE}>
         <span style={ID_STYLE}>TC-F-12</span>
         <form noValidate>
-          <h3 id="f12-section-label" style={{ fontSize: "14px", marginBottom: "0.5rem" }}>
+          <h2 id="f12-section-label" style={{ fontSize: "14px", marginBottom: "0.5rem" }}>
             Endereço de entrega
-          </h3>
+          </h2>
           <div className="br-input" style={{ marginBottom: "1rem" }}>
             <input id="f12-address" className="br-input" type="text"
               aria-labelledby="f12-section-label" placeholder="Digite o endereço completo" />
