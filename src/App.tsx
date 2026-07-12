@@ -5,8 +5,9 @@ import NavPage from "./pages/NavPage";
 import TablePage from "./pages/TablePage";
 import ListPage from "./pages/ListPage";
 import InteractivePage from "./pages/InteractivePage";
+import OrganicPage from "./pages/OrganicPage";
 
-type PageKey = "buttons" | "form" | "nav" | "table" | "list" | "interactive";
+type PageKey = "buttons" | "form" | "nav" | "table" | "list" | "interactive" | "organic";
 
 const PAGES: Record<PageKey, { label: string; component: ComponentType }> = {
   buttons:     { label: "Botões", component: ButtonPage },
@@ -15,11 +16,12 @@ const PAGES: Record<PageKey, { label: string; component: ComponentType }> = {
   table:       { label: "Tabelas", component: TablePage },
   list:        { label: "Listas", component: ListPage },
   interactive: { label: "Interativos", component: InteractivePage },
+  organic:     { label: "Orgânico", component: OrganicPage },
 };
 
 // TC-<letter>-xx → tab
 const TAB_BY_PREFIX: Record<string, PageKey> = {
-  B: "buttons", F: "form", N: "nav", T: "table", L: "list", I: "interactive",
+  B: "buttons", F: "form", N: "nav", T: "table", L: "list", I: "interactive", O: "organic",
 };
 const tabForCase = (id: string): PageKey => TAB_BY_PREFIX[id.split("-")[1] ?? ""] ?? "buttons";
 
