@@ -219,6 +219,21 @@ export default function FormPage() {
           <button className="br-button primary" type="submit">Salvar</button>
         </form>
       </section>
+
+      {/* TC-F-14 */}
+      <section id="TC-F-14" data-testid="TC-F-14" style={CASE_STYLE}>
+        <span style={ID_STYLE}>TC-F-14</span>
+        <form noValidate>
+          <div className="br-input" style={{ marginBottom: "1rem" }}>
+            <label htmlFor="f14-phone">Telefone</label>
+            <small className="v-tone-a" style={{ display: "block", fontSize: "12px" }}>
+              Inclua o DDD, somente números
+            </small>
+            <input id="f14-phone" className="br-input" type="tel" />
+          </div>
+          <button className="br-button primary" type="submit">Salvar</button>
+        </form>
+      </section>
     </main>
   );
 }

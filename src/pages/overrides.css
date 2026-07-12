@@ -22,3 +22,37 @@
 .v-border-a {
   border-color: #ff6600 !important;
 }
+
+.v-space-a {
+  padding: 24px 16px 4px !important;
+}
+
+.v-pad-a {
+  padding: 13px !important;
+}
+
+.v-clip-a {
+  max-width: 84px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.v-clip-b {
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.v-size-a {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  padding: 0 !important;
+}
+
+.v-tone-a {
+  color: #a0a0a0;
+}

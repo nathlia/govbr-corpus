@@ -1,16 +1,27 @@
 import { useEffect, useState, type ComponentType } from "react";
 import ButtonPage from "./pages/ButtonPage";
 import FormPage from "./pages/FormPage";
+import NavPage from "./pages/NavPage";
+import TablePage from "./pages/TablePage";
+import ListPage from "./pages/ListPage";
+import InteractivePage from "./pages/InteractivePage";
 
-type PageKey = "buttons" | "form";
+type PageKey = "buttons" | "form" | "nav" | "table" | "list" | "interactive";
 
 const PAGES: Record<PageKey, { label: string; component: ComponentType }> = {
-  buttons: { label: "Botões", component: ButtonPage },
-  form:    { label: "Formulário", component: FormPage },
+  buttons:     { label: "Botões", component: ButtonPage },
+  form:        { label: "Formulário", component: FormPage },
+  nav:         { label: "Navegação", component: NavPage },
+  table:       { label: "Tabelas", component: TablePage },
+  list:        { label: "Listas", component: ListPage },
+  interactive: { label: "Interativos", component: InteractivePage },
 };
 
-// TC-B-xx → buttons, TC-F-xx → form
-const tabForCase = (id: string): PageKey => (id.startsWith("TC-F") ? "form" : "buttons");
+// TC-<letter>-xx → tab
+const TAB_BY_PREFIX: Record<string, PageKey> = {
+  B: "buttons", F: "form", N: "nav", T: "table", L: "list", I: "interactive",
+};
+const tabForCase = (id: string): PageKey => TAB_BY_PREFIX[id.split("-")[1] ?? ""] ?? "buttons";
 
 export default function App() {
   const [current, setCurrent] = useState<PageKey>(() => {

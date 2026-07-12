@@ -106,6 +106,14 @@ export default function ButtonPage() {
           <button className="br-button primary" type="button">Próxima etapa</button>
         </div>
       </section>
+
+      {/* TC-B-14 */}
+      <section id="TC-B-14" data-testid="TC-B-14" style={CASE_STYLE}>
+        <span aria-hidden="true" style={ID_STYLE}>TC-B-14</span>
+        <button className="br-button circle v-size-a" type="button" aria-label="Filtrar resultados">
+          <i className="fas fa-filter" aria-hidden="true"></i>
+        </button>
+      </section>
     </main>
   );
 }
