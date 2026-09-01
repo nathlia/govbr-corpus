@@ -1,3 +1,4 @@
+import "./portal.css";
 import type { CSSProperties } from "react";
 
 const CASE_STYLE: CSSProperties = {
@@ -70,7 +71,7 @@ export default function TablePage() {
       {/* TC-T-03 */}
       <section id="TC-T-03" data-testid="TC-T-03" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-T-03</span>
-        <table className="br-table" style={{ borderCollapse: "collapse", width: "100%" }}>
+        <table className="br-table tabela-servicos" style={{ borderCollapse: "collapse", width: "100%" }}>
           <caption style={{ textAlign: "left", marginBottom: "0.5rem", fontWeight: 600 }}>
             Serviços disponíveis por canal
           </caption>

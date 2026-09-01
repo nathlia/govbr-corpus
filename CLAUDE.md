@@ -10,4 +10,10 @@ Rules:
   lives only in `../govbr-eval/ground-truth.json`. Corpus and gabarito must stay separated.
 - When adding a case: neutral `TC-X-NN` section id + `data-testid`, one deviation max, then record
   it in `govbr-eval/ground-truth.json` (categories + expected detection per tool).
-- Style-based violations go in `src/pages/overrides.css` with opaque names (`v-token-a`, …).
+- Style-based violations go in `src/pages/portal.css`. Name every class by the **place it occupies
+  in the application** (`.acao-cancelar`, `.item-mensagem`), never by the deviation it applies.
+  A name like `v-radius-a` states the answer key in the DOM — see D-24 in the decision log.
+- `portal.css` classes must also sit on **conforming** elements, in comparable number. The oracle
+  reports non-canonical classes on `br-*` components as a finding, so if only violating elements
+  carried an extra class, that rule would become a defect detector by construction. Declarations
+  at conforming points must be inert or conformant, so the measured baselines do not move (D-06).

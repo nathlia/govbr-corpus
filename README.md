@@ -30,7 +30,7 @@ src/
 └── pages/
     ├── ButtonPage.jsx   TC-B-01 … TC-B-13
     ├── FormPage.jsx     TC-F-01 … TC-F-13
-    └── overrides.css    local style variants used by specific cases
+    └── portal.css       folha do portal — classes nomeadas pelo lugar de uso, nunca pelo efeito
 ```
 
 ## Related repositories

@@ -1,3 +1,4 @@
+import "./portal.css";
 import type { CSSProperties } from "react";
 
 const CASE_STYLE: CSSProperties = {
@@ -44,7 +45,7 @@ export default function NavPage() {
         <span aria-hidden="true" style={ID_STYLE}>TC-N-01</span>
         <div style={HEADER_STYLE}>
           <a href="#TC-N-01" style={{ fontWeight: 700, color: "#1351b4" }}>gov.br</a>
-          <a href="#n01-conteudo" className="br-skiplink" style={{ position: "static" }}>Ir para o conteúdo</a>
+          <a href="#n01-conteudo" className="br-skiplink link-atalho" style={{ position: "static" }}>Ir para o conteúdo</a>
         </div>
         <div id="n01-conteudo" style={{ padding: "0.75rem 1rem" }}>
           <p>Conteúdo principal da página de consulta.</p>
@@ -73,7 +74,7 @@ export default function NavPage() {
       <section id="TC-N-03" data-testid="TC-N-03" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-N-03</span>
         <div style={HEADER_STYLE}>
-          <a href="#n03-conteudo" className="br-skiplink" style={{ position: "static" }}>Ir para o conteúdo</a>
+          <a href="#n03-conteudo" className="br-skiplink link-atalho" style={{ position: "static" }}>Ir para o conteúdo</a>
           <a href="#TC-N-03" style={{ fontWeight: 700, color: "#1351b4" }}>gov.br</a>
         </div>
         <Breadcrumb>
@@ -125,7 +126,7 @@ export default function NavPage() {
       <section id="TC-N-06" data-testid="TC-N-06" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-N-06</span>
         <p style={{ marginBottom: "0.5rem" }}>Definição de referência internacional:</p>
-        <blockquote lang="en" style={{ borderLeft: "3px solid #1351b4", paddingLeft: "0.75rem", fontStyle: "italic" }}>
+        <blockquote lang="en" className="trilha-navegacao" style={{ borderLeft: "3px solid #1351b4", paddingLeft: "0.75rem", fontStyle: "italic" }}>
           Digital government is the use of digital technologies as an integrated part of governments&apos; modernisation strategies.
         </blockquote>
       </section>

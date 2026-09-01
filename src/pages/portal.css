@@ -1,0 +1,118 @@
+/*
+ * Folha de estilo do portal — ajustes locais por ponto de uso.
+ *
+ * As classes são nomeadas pelo LUGAR que ocupam na aplicação (`.acao-cancelar`,
+ * `.item-mensagem`), nunca pelo efeito que aplicam. Nomear pelo efeito entrega o
+ * gabarito: uma classe chamada `v-radius-a` num botão diz ao avaliador, antes de
+ * qualquer inspeção, que o defeito daquele elemento é o raio. Ver D-24.
+ *
+ * Pelo mesmo motivo, elementos conformes também carregam classes desta folha, em
+ * quantidade comparável: a mera presença de uma classe fora do vocabulário `br-*`
+ * não pode ser sinal de nada. As declarações desses pontos são inertes ou
+ * conformes por construção, para não perturbar as linhas de base já medidas (D-06).
+ */
+
+.acao-entrar {
+  letter-spacing: 0;
+}
+
+.acao-confirmar {
+  background-color: #1352b4 !important;
+  border-color: #1352b4 !important;
+}
+
+.acao-busca-icone {
+  text-transform: none;
+}
+
+.acao-acesso {
+  font-family: Arial, sans-serif !important;
+}
+
+.acao-excluir {
+  cursor: pointer;
+}
+
+.acao-cancelar {
+  border-radius: 6px !important;
+}
+
+.acao-pesquisar {
+  --origem: barra-superior;
+}
+
+.acao-salvar:focus,
+.acao-salvar:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.acao-paginacao {
+  --origem: rodape-formulario;
+}
+
+.acao-filtro {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  padding: 0 !important;
+}
+
+.campo-cpf {
+  --origem: cadastro;
+}
+
+.campo-nome {
+  border-color: #ff6600 !important;
+}
+
+.grupo-endereco {
+  letter-spacing: 0;
+}
+
+.aviso-formato {
+  color: #a0a0a0;
+}
+
+.link-atalho {
+  --origem: cabecalho;
+}
+
+.trilha-navegacao {
+  letter-spacing: 0;
+}
+
+.tabela-servicos {
+  --origem: relatorio;
+}
+
+.item-solicitacao {
+  --origem: solicitacoes;
+}
+
+.item-notificacao {
+  padding: 24px 16px 4px !important;
+}
+
+.item-mensagem {
+  padding: 13px !important;
+}
+
+.item-historico {
+  --origem: historico;
+}
+
+.acao-enviar {
+  max-width: 84px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.resumo-servico {
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

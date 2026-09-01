@@ -1,3 +1,4 @@
+import "./portal.css";
 import type { CSSProperties } from "react";
 
 const CASE_STYLE: CSSProperties = {
@@ -33,7 +34,7 @@ export default function FormPage() {
             <small id="f01-cpf-hint" style={{ display: "block", color: "#555" }}>
               Formato: 000.000.000-00
             </small>
-            <input id="f01-cpf" className="br-input" type="text"
+            <input id="f01-cpf" className="br-input campo-cpf" type="text"
               placeholder="000.000.000-00" aria-required="true"
               aria-describedby="f01-cpf-hint" required />
           </div>
@@ -200,7 +201,7 @@ export default function FormPage() {
             Endereço de entrega
           </h2>
           <div className="br-input" style={{ marginBottom: "1rem" }}>
-            <input id="f12-address" className="br-input" type="text"
+            <input id="f12-address" className="br-input grupo-endereco" type="text"
               aria-labelledby="f12-section-label" placeholder="Digite o endereço completo" />
           </div>
           <button className="br-button primary" type="submit">Confirmar</button>
@@ -213,7 +214,7 @@ export default function FormPage() {
         <form noValidate>
           <div className="br-input" style={{ marginBottom: "1rem" }}>
             <label htmlFor="f13-name">Nome completo</label>
-            <input id="f13-name" className="br-input v-border-a" type="text"
+            <input id="f13-name" className="br-input campo-nome" type="text"
               aria-required="true" required />
           </div>
           <button className="br-button primary" type="submit">Salvar</button>
@@ -226,7 +227,7 @@ export default function FormPage() {
         <form noValidate>
           <div className="br-input" style={{ marginBottom: "1rem" }}>
             <label htmlFor="f14-phone">Telefone</label>
-            <small className="v-tone-a" style={{ display: "block", fontSize: "12px" }}>
+            <small className="aviso-formato" style={{ display: "block", fontSize: "12px" }}>
               Inclua o DDD, somente números
             </small>
             <input id="f14-phone" className="br-input" type="tel" />

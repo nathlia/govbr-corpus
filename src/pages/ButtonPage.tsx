@@ -1,4 +1,4 @@
-import "./overrides.css";
+import "./portal.css";
 import type { CSSProperties } from "react";
 
 const CASE_STYLE: CSSProperties = {
@@ -23,13 +23,13 @@ export default function ButtonPage() {
       {/* TC-B-01 */}
       <section id="TC-B-01" data-testid="TC-B-01" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-B-01</span>
-        <button className="br-button primary" type="button">Entrar</button>
+        <button className="br-button primary acao-entrar" type="button">Entrar</button>
       </section>
 
       {/* TC-B-02 */}
       <section id="TC-B-02" data-testid="TC-B-02" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-B-02</span>
-        <button className="br-button circle" type="button">
+        <button className="br-button circle acao-busca-icone" type="button">
           <i className="fas fa-search" aria-hidden="true"></i>
         </button>
       </section>
@@ -45,19 +45,19 @@ export default function ButtonPage() {
       {/* TC-B-04 */}
       <section id="TC-B-04" data-testid="TC-B-04" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-B-04</span>
-        <button className="br-button primary v-token-a" type="button">Confirmar</button>
+        <button className="br-button primary acao-confirmar" type="button">Confirmar</button>
       </section>
 
       {/* TC-B-05 */}
       <section id="TC-B-05" data-testid="TC-B-05" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-B-05</span>
-        <button className="br-button primary v-font-a" type="button">Acessar sistema</button>
+        <button className="br-button primary acao-acesso" type="button">Acessar sistema</button>
       </section>
 
       {/* TC-B-06 */}
       <section id="TC-B-06" data-testid="TC-B-06" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-B-06</span>
-        <button className="br-button danger" type="button">Excluir conta</button>
+        <button className="br-button danger acao-excluir" type="button">Excluir conta</button>
       </section>
 
       {/* TC-B-07 */}
@@ -69,13 +69,13 @@ export default function ButtonPage() {
       {/* TC-B-08 */}
       <section id="TC-B-08" data-testid="TC-B-08" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-B-08</span>
-        <button className="br-button secondary v-radius-a" type="button">Cancelar</button>
+        <button className="br-button secondary acao-cancelar" type="button">Cancelar</button>
       </section>
 
       {/* TC-B-09 */}
       <section id="TC-B-09" data-testid="TC-B-09" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-B-09</span>
-        <button className="br-button circle" type="button" aria-label="Pesquisar">
+        <button className="br-button circle acao-pesquisar" type="button" aria-label="Pesquisar">
           <i className="fas fa-search" aria-hidden="true"></i>
         </button>
       </section>
@@ -83,7 +83,7 @@ export default function ButtonPage() {
       {/* TC-B-10 */}
       <section id="TC-B-10" data-testid="TC-B-10" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-B-10</span>
-        <button className="br-button primary v-focus-a" type="button">Salvar alterações</button>
+        <button className="br-button primary acao-salvar" type="button">Salvar alterações</button>
       </section>
 
       {/* TC-B-11 */}
@@ -102,15 +102,15 @@ export default function ButtonPage() {
       <section id="TC-B-13" data-testid="TC-B-13" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-B-13</span>
         <div style={{ display: "flex", gap: "1rem" }}>
-          <button className="br-button secondary" type="button">Voltar</button>
-          <button className="br-button primary" type="button">Próxima etapa</button>
+          <button className="br-button secondary acao-paginacao" type="button">Voltar</button>
+          <button className="br-button primary acao-paginacao" type="button">Próxima etapa</button>
         </div>
       </section>
 
       {/* TC-B-14 */}
       <section id="TC-B-14" data-testid="TC-B-14" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-B-14</span>
-        <button className="br-button circle v-size-a" type="button" aria-label="Filtrar resultados">
+        <button className="br-button circle acao-filtro" type="button" aria-label="Filtrar resultados">
           <i className="fas fa-filter" aria-hidden="true"></i>
         </button>
       </section>

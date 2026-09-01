@@ -1,4 +1,4 @@
-import "./overrides.css";
+import "./portal.css";
 import type { CSSProperties } from "react";
 
 const CASE_STYLE: CSSProperties = {
@@ -26,7 +26,7 @@ export default function ListPage() {
       <section id="TC-L-01" data-testid="TC-L-01" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-L-01</span>
         <div className="br-list" role="list" style={{ border: "1px solid #dee2e6" }}>
-          <div className="br-item" role="listitem" style={ITEM_STYLE}>
+          <div className="br-item item-solicitacao" role="listitem" style={ITEM_STYLE}>
             <div className="content">Certidão negativa de débitos</div>
           </div>
           <div className="br-item" role="listitem" style={ITEM_STYLE}>
@@ -48,7 +48,7 @@ export default function ListPage() {
           <div className="br-item" role="listitem" style={ITEM_STYLE}>
             <div className="content">Meus dados cadastrais</div>
           </div>
-          <div className="br-item v-space-a" role="listitem" style={{ borderBottom: "1px solid #dee2e6" }}>
+          <div className="br-item item-notificacao" role="listitem" style={{ borderBottom: "1px solid #dee2e6" }}>
             <div className="content">Notificações e alertas</div>
           </div>
           <div className="br-item" role="listitem" style={ITEM_STYLE}>
@@ -61,7 +61,7 @@ export default function ListPage() {
       <section id="TC-L-03" data-testid="TC-L-03" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-L-03</span>
         <div className="br-list" role="list" style={{ border: "1px solid #dee2e6" }}>
-          <div className="br-item v-pad-a" role="listitem" style={{ borderBottom: "1px solid #dee2e6" }}>
+          <div className="br-item item-mensagem" role="listitem" style={{ borderBottom: "1px solid #dee2e6" }}>
             <div className="content">Solicitações em andamento</div>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function ListPage() {
       {/* TC-L-05 */}
       <section id="TC-L-05" data-testid="TC-L-05" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-L-05</span>
-        <button className="br-button primary v-clip-a" type="button">Confirmar solicitação</button>
+        <button className="br-button primary acao-enviar" type="button">Confirmar solicitação</button>
       </section>
 
       {/* TC-L-06 */}
@@ -87,7 +87,7 @@ export default function ListPage() {
           <div className="br-item" role="listitem" style={ITEM_STYLE}>
             <div className="content">
               <span style={{ display: "block", fontWeight: 600 }}>Certidão negativa de débitos</span>
-              <p className="v-clip-b" style={{ margin: 0, color: "#555" }}>
+              <p className="resumo-servico" style={{ margin: 0, color: "#555" }}>
                 Documento que comprova a inexistência de débitos junto à administração pública federal
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function ListPage() {
       <section id="TC-L-08" data-testid="TC-L-08" style={CASE_STYLE}>
         <span aria-hidden="true" style={ID_STYLE}>TC-L-08</span>
         <div className="br-list" role="list" style={{ border: "1px solid #dee2e6" }}>
-          <div className="br-item" role="listitem" style={ITEM_STYLE}>
+          <div className="br-item item-historico" role="listitem" style={ITEM_STYLE}>
             <div className="content">Meus dados cadastrais</div>
           </div>
           <hr className="br-divider" role="presentation" style={{ margin: 0 }} />
