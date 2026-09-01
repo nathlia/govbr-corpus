@@ -1,0 +1,189 @@
+/*
+ * Folha da tela de identificação.
+ *
+ * Mesma regra do `portal.css` (D-24): classe nomeada pelo LUGAR que ocupa na tela, nunca pelo
+ * efeito que aplica, e pontos conformes carregam classe igual aos que não são — a presença de uma
+ * classe fora do vocabulário `br-*` não pode ser sinal de nada.
+ */
+
+:root {
+  --tela-fundo: #f8f8f8;
+  --tela-borda: #dee2e6;
+  --tela-texto: #333333;
+  --tela-azul: #1351b4;
+}
+
+body {
+  margin: 0;
+  background-color: var(--tela-fundo);
+  color: var(--tela-texto);
+  font-family: Rawline, Raleway, sans-serif;
+}
+
+.barra-superior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--tela-borda);
+}
+
+.marca-govbr {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--tela-azul);
+  text-decoration: none;
+}
+
+.barra-recursos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.recurso-contraste {
+  gap: 8px;
+}
+
+.recurso-libras {
+  gap: 8px;
+}
+
+.area-identificacao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.painel-institucional {
+  flex: 1 1 380px;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid var(--tela-borda);
+}
+
+.titulo-institucional {
+  font-size: 24px;
+  line-height: 1.4;
+  margin: 0 0 16px;
+}
+
+.texto-institucional {
+  margin: 0;
+  color: #555555;
+}
+
+.cartao-identificacao {
+  flex: 1 1 380px;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid var(--tela-borda);
+}
+
+.titulo-identificacao {
+  font-size: 20px;
+  margin: 0 0 16px;
+}
+
+.cabecalho-metodo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.nome-metodo {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.apoio-metodo {
+  margin: 0 0 16px;
+  color: #555555;
+}
+
+.formulario-cpf {
+  margin-bottom: 16px;
+}
+
+.campo-cpf-fluxo {
+  margin-bottom: 16px;
+}
+
+.mensagem-erro-cpf {
+  margin: 0 0 8px;
+  color: #e60000;
+}
+
+.acao-continuar {
+  --origem: formulario-cpf;
+}
+
+.titulo-outras-opcoes {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.lista-opcoes {
+  border: 1px solid var(--tela-borda);
+}
+
+.opcao-identificacao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px;
+  border-bottom: 1px solid var(--tela-borda);
+}
+
+.icone-opcao {
+  color: var(--tela-azul);
+}
+
+.link-opcao {
+  color: var(--tela-azul);
+}
+
+.link-opcao:focus,
+.link-opcao:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.selo-conta {
+  margin-left: auto;
+  padding: 0 8px;
+  background-color: #168821;
+  color: #ffffff;
+  font-size: 11px;
+}
+
+.divisor-rodape {
+  margin: 16px 0;
+}
+
+.linha-ajuda {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+}
+
+.link-ajuda {
+  color: var(--tela-azul);
+}
+
+.linha-termo {
+  margin: 0;
+}
+
+.link-termo {
+  color: var(--tela-azul);
+}
