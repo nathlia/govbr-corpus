@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "o_que_e": "Telas reais da aplicação PNIP, congeladas como páginas estáticas. Uso autorizado pela equipe do projeto para execução local. Nenhum dado de produção é capturado: só rotas públicas, sem sessão.",
+    "por_que_congelar": "D-06 — a superfície medida tem de ser a mesma em todas as execuções.",
+    "limite_declarado": "Bindings do Angular não sobrevivem à captura. Cada estado de interação é uma captura própria, nunca uma simulação posterior.",
+    "nunca_agregar_com": "ground-truth.json (TC-*), ground-truth-fluxo.json e a ala orgânica (D-13)"
+  },
+  "capturas": [
+    {
+      "slug": "pnip-login",
+      "descricao": "Tela de acesso via gov.br (rota pública, sem guard)",
+      "origem": {
+        "app": "pnip-clientes-web",
+        "commit": "c41f45281ca6251b8a8a70562a83b57a5e70c682",
+        "rota": "/login",
+        "capturadoDe": "http://localhost:4210/login"
+      },
+      "estado": "inicial",
+      "ds": {
+        "core": "3.4.1",
+        "webcomponents": "1.16.0"
+      },
+      "arquivo": "public/real/pnip-login.html",
+      "sha256": "badd4707f5b59522a779143dc98b1bf68dd95cb938155d9118f0caaa48387c4f",
+      "capturadoEm": "2026-09-01T23:59:21.338Z"
+    },
+    {
+      "slug": "pnip-privacidade",
+      "descricao": "Política de privacidade (rota pública, conteúdo estático longo)",
+      "origem": {
+        "app": "pnip-clientes-web",
+        "commit": "c41f45281ca6251b8a8a70562a83b57a5e70c682",
+        "rota": "/privacidade",
+        "capturadoDe": "http://localhost:4210/privacidade"
+      },
+      "estado": "inicial",
+      "ds": {
+        "core": "3.4.1",
+        "webcomponents": "1.16.0"
+      },
+      "arquivo": "public/real/pnip-privacidade.html",
+      "sha256": "83d8e1973235dd08d2d14417c4764f78a566209c228a8af51211873a258f71a7",
+      "capturadoEm": "2026-09-01T23:59:24.305Z"
+    }
+  ]
+}
