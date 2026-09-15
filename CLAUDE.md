@@ -3,6 +3,11 @@
 React app (Vite + `@govbr-ds/core` 3.7.0) used as the system under test in the thesis evaluation.
 
 - Dev server: `npm run dev` → http://localhost:3000 (Node 18+; use `nvm use 25`)
+- Measured runs never use the dev server (v02, D-40): the battery builds `dist/` and
+  `govbr-eval/scripts/measurement-surface.ts` serves only the files `fluxo.html` references, with no
+  network egress. So the flow page must be servable from its own build: Font Awesome 6.6.0 is the
+  pinned `@fortawesome/fontawesome-free` package imported in `src/fluxo.tsx` (render checked
+  pixel-identical to the former CDN link). Never add a CDN link to the flow page.
 - Tabs: Botões (`TC-B-*`) and Formulário (`TC-F-*`); hash deep links supported (`/#TC-F-04`)
 
 Rules:
