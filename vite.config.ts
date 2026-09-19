@@ -6,10 +6,11 @@ export default defineConfig({
   server: { port: 3000 },
   build: {
     rollupOptions: {
-      // Duas páginas independentes de propósito: a suíte de casos TC-* e a tela de fluxo.
-      // Entradas separadas garantem que o bundle da tela de fluxo não carregue nada do corpus de
-      // casos — um agente que abre /fluxo.html não tem como topar com a grade TC-*.
-      input: { main: "index.html", fluxo: "fluxo.html" },
+      // Páginas independentes de propósito: a suíte de casos TC-*, a tela de fluxo e a tela de
+      // solicitação. Entradas separadas garantem que o bundle de uma tela não carregue nada das
+      // outras — um agente que abre /fluxo.html ou /solicitacao.html não tem como topar com a
+      // grade TC-*.
+      input: { main: "index.html", fluxo: "fluxo.html", solicitacao: "solicitacao.html" },
     },
   },
 });
