@@ -11,6 +11,10 @@ React app (Vite + `@govbr-ds/core` 3.7.0) used as the system under test in the t
 - `solicitacao.html` — second realistic screen (slice 8, D-49), its own Vite entry like `fluxo.html`
   and under the same rules: no CDN, nothing shared with the `TC-*` bundle. Its answer key, the
   draw that produced it and the build record live only in `../govbr-eval/tela-a/`.
+- `public/pnip/` — build congelado do modo mock do PNIP (tela B do instrumento, D-57). Nunca edite
+  arquivo dessa pasta: refaça o build no `pnip-mock` e rode `npm run pnip:congelar`; confira com
+  `npm run pnip:conferir`. O fallback de SPA sob `/pnip/` e o alias do ícone "Sair" moram no
+  `vite.config.ts`. README › "Ala `pnip/`".
 - Tabs: Botões (`TC-B-*`) and Formulário (`TC-F-*`); hash deep links supported (`/#TC-F-04`)
 
 Rules:

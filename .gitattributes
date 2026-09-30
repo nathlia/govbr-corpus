@@ -1,3 +1,5 @@
 # A ala real é medida por sha256 (public/real/manifesto.json). Normalizar fim de linha no
 # checkout mudaria os bytes do arquivo e invalidaria a prova de que a página medida é a mesma.
 public/real/** -text
+# A ala pnip/ também: build do PNIP congelado byte a byte (public/pnip/manifesto.json).
+public/pnip/** -text

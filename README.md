@@ -19,7 +19,7 @@ npm run dev     # http://localhost:3000
 
 Deep links: `http://localhost:3000/#TC-F-04` opens the right tab and scrolls to the case.
 
-## The four wings
+## The wings
 
 They are separate instruments over different pages. Their numbers are **never pooled or averaged**
 with each other (D-13) — the harness keeps a separate gabarito and scorer block per wing.
@@ -75,6 +75,29 @@ Declared limit, also in the manifesto: Angular bindings do not survive capture, 
 interaction state is its own capture**, never a later simulation. This wing has no gabarito —
 over a real screen, adjudication is the instrument.
 
+### 5. Ala `pnip/` — a aplicação PNIP rodando, em modo mock
+
+`public/pnip/` é o build estático do **modo mock** da aplicação PNIP (fork controlado
+`pnip-mock` de `pnip-clientes-web` no commit `c41f4528`; Angular 15, `@govbr-ds/core` 3.4.1 +
+`@govbr-ds/webcomponents` 1.16.0), servido em `http://localhost:3000/pnip/`. Ao contrário da ala
+real, aqui o código de produção **roda**: roteamento, guards, componentes e web components do DS.
+Só a sessão, o backend HTTP e os recursos externos são substituídos, dentro do navegador: dados
+todos fictícios, hoje congelado em 2026-03-16 09:30, nenhuma requisição externa. As interações são
+reais e o estado vive em memória — recarregar a página volta ao início. Uso autorizado pela equipe
+do projeto para execução local.
+
+- **Servir.** É uma SPA com base href `/pnip/`: o `vite.config.ts` (dev e `preview`) responde com
+  `public/pnip/index.html` a toda rota sem extensão sob `/pnip/` (a raiz continua com o fallback
+  do app React), e serve `/assets/images/exit-icon.png` — o ícone do "Sair", que o template do app
+  pede fora do prefixo — a partir da árvore `pnip/`. O build copiado nunca é editado.
+- **Refazer.** No `pnip-mock` (Node 16.20.2, árvore limpa): `node mock-tools/build-mock.mjs`. Aqui:
+  `npm run pnip:congelar`, que copia `dist/pnip-mock/` inteiro (chunks lazy incluídos), recusa
+  source maps e reescreve `public/pnip/manifesto.json` com origem, commit do fork, comando de
+  build, versão do Node, versões do DS, hoje congelado e o sha256 de cada arquivo.
+- **Conferir.** `npm run pnip:conferir`: a árvore tem de bater com o manifesto, arquivo por arquivo
+  — nada faltando, nada sobrando, nenhum sha256 diferente. Reproduzir, nunca reparar: mudar a tela
+  é refazer o build e congelar de novo, não editar arquivo desta pasta.
+
 ## Structure
 
 ```
@@ -90,7 +113,10 @@ src/
     └── fluxo.css        folha da tela de fluxo — mesma regra
 public/
 ├── static/              three plain-document cases
-└── real/                frozen PNIP captures + manifesto.json
+├── real/                frozen PNIP captures + manifesto.json
+└── pnip/                PNIP mock-mode build (SPA under /pnip/) + manifesto.json
+scripts/
+└── congelar-pnip.mjs    freezes ../pnip-mock/dist/pnip-mock into public/pnip/ and checks it
 ```
 
 ## Ground-truth hygiene

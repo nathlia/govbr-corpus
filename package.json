@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "pnip:congelar": "node scripts/congelar-pnip.mjs congelar",
+    "pnip:conferir": "node scripts/congelar-pnip.mjs conferir"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.6.0",
