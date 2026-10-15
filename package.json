@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "pnip:congelar": "node scripts/congelar-pnip.mjs congelar",
-    "pnip:conferir": "node scripts/congelar-pnip.mjs conferir"
+    "pnip:conferir": "node scripts/congelar-pnip.mjs conferir",
+    "controles:conferir": "node scripts/conferir-controles.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.6.0",

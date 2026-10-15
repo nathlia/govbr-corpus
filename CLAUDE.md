@@ -15,6 +15,9 @@ React app (Vite + `@govbr-ds/core` 3.7.0) used as the system under test in the t
   arquivo dessa pasta: refaça o build no `pnip-mock` e rode `npm run pnip:congelar`; confira com
   `npm run pnip:conferir`. O fallback de SPA sob `/pnip/` e o alias do ícone "Sair" moram no
   `vite.config.ts`. README › "Ala `pnip/`".
+- `public/controles/` — páginas estáticas da Biblioteca Municipal (alas `a/` e `b/` + `recursos/`),
+  geradas fora deste repositório e conferidas por sha256: `npm run controles:conferir`. Nunca edite
+  à mão; o que cada página exercita mora só no `govbr-eval`.
 - Tabs: Botões (`TC-B-*`) and Formulário (`TC-F-*`); hash deep links supported (`/#TC-F-04`)
 
 Rules:

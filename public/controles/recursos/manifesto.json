@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "o_que_e": "Páginas estáticas da Biblioteca Municipal (serviço fictício de reservas e renovação de empréstimos), servidas sem rede.",
+    "regra": "Reproduzir, nunca reparar: os arquivos são gerados e conferidos byte a byte. Não edite à mão.",
+    "conteudo": "Folhas e fontes oficiais copiadas dos pacotes do corpus, mais a folha e o logotipo da biblioteca.",
+    "pacotes": {
+      "@govbr-ds/core": "3.7.0",
+      "@fortawesome/fontawesome-free": "6.6.0"
+    }
+  },
+  "arquivos": {
+    "biblioteca.css": "cb3dac1806af5b8f53fabf3485fa0978951e5591e46e5e03d80965009fb4bd6b",
+    "core.min.css": "80c6baf9bf13852dbcef8266e3b14497a660e02e591695b92a314a473f33ef91",
+    "fontawesome/css/all.min.css": "e5e202e3c899507992952533f57b634722b69b34241d271963559d31aa33ef81",
+    "fontawesome/webfonts/fa-brands-400.woff2": "c411f11975d26eb04cd2aa3c071181d4b18e489f1fb97060d4176a3531dfb36e",
+    "fontawesome/webfonts/fa-regular-400.woff2": "c732f106e91bc618767fbac8e2c7b27e5c736d477b2bb4fb83f597a43198c33c",
+    "fontawesome/webfonts/fa-solid-900.woff2": "1f0189e087fcefbf654fad74a3a06668b782c01353a61d5c0b7f0bf23e33c020",
+    "fontawesome/webfonts/fa-v4compatibility.woff2": "2aca24b35bd41474dcc5e7fb5f11ec43fa06e3ac1d0035ad41108fa6b30b0871",
+    "logo.svg": "0f2a9aabd60639242b89da54bef2d77c3ab63a69abb724fbeee63202de0b1c48"
+  }
+}

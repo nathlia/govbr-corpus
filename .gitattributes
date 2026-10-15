@@ -3,3 +3,5 @@
 public/real/** -text
 # A ala pnip/ também: build do PNIP congelado byte a byte (public/pnip/manifesto.json).
 public/pnip/** -text
+# A ala controles/ também: páginas geradas e conferidas por sha256 (public/controles/*/manifesto.json).
+public/controles/** -text

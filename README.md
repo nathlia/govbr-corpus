@@ -98,6 +98,15 @@ do projeto para execução local.
   — nada faltando, nada sobrando, nenhum sha256 diferente. Reproduzir, nunca reparar: mudar a tela
   é refazer o build e congelar de novo, não editar arquivo desta pasta.
 
+### 6. Ala `controles/` — Biblioteca Municipal
+
+`public/controles/` são páginas estáticas de um serviço fictício (reservas e renovação de
+empréstimos de uma biblioteca municipal), escritas com a marcação do `@govbr-ds/core` 3.7.0 e
+servidas sem rede: `recursos/` traz as folhas e fontes copiadas dos pacotes do corpus; `a/` e `b/`
+trazem as páginas, com nomes opacos. Cada pasta tem um `manifesto.json` com o sha256 de cada
+arquivo; `npm run controles:conferir` falha se algo faltar, sobrar ou mudar. As páginas são geradas
+no `govbr-eval` e nunca editadas aqui.
+
 ## Structure
 
 ```
