@@ -7,3 +7,5 @@ public/pnip/** -text
 public/controles/** -text
 # A ala pnip-c/ (tela C, D-134) também: build congelado byte a byte (public/pnip-c/manifesto.json).
 public/pnip-c/** -text
+# A ala pnip-d/ (tela D, processos) também: build congelado byte a byte (public/pnip-d/manifesto.json).
+public/pnip-d/** -text

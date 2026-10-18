@@ -12,11 +12,14 @@ import react from "@vitejs/plugin-react";
  * Ala pnip-c/ (tela C, D-134): outro build do mesmo pnip-mock, base href /pnip-c/, com as mesmas
  * regras. O alias do "Sair" continua servido pela ala pnip/ (o arquivo é o mesmo nas duas; a
  * superfície de medida serve cada tela com o alias da própria árvore, telas.json).
+ *
+ * Ala pnip-d/ (tela D, `processos`, substituta da C abaixo do piso): mesmo fork, base href /pnip-d/,
+ * mesmas regras.
  */
-const PNIP_PREFIXOS = ["/pnip/", "/pnip-c/"];
+const PNIP_PREFIXOS = ["/pnip/", "/pnip-c/", "/pnip-d/"];
 const PNIP_ALIASES: Record<string, string> = { "/assets/images/exit-icon.png": "/pnip/assets/images/exit-icon.png" };
 
-/** Destino da reescrita, ou `null` quando o pedido não é de uma das alas pnip/ e pnip-c/. */
+/** Destino da reescrita, ou `null` quando o pedido não é de uma das alas pnip/, pnip-c/ e pnip-d/. */
 function pnipRota(path: string): string | null {
   if (PNIP_ALIASES[path]) return PNIP_ALIASES[path];
   const prefixo = PNIP_PREFIXOS.find((p) => path.startsWith(p));
