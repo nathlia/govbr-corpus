@@ -5,3 +5,5 @@ public/real/** -text
 public/pnip/** -text
 # A ala controles/ também: páginas geradas e conferidas por sha256 (public/controles/*/manifesto.json).
 public/controles/** -text
+# A ala pnip-c/ (tela C, D-134) também: build congelado byte a byte (public/pnip-c/manifesto.json).
+public/pnip-c/** -text

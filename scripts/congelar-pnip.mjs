@@ -1,7 +1,12 @@
 // Ala pnip/ — congela o build mock do PNIP em public/pnip/ e confere contra o manifesto.
 //
-//   node scripts/congelar-pnip.mjs congelar [--origem ../pnip-mock/dist/pnip-mock]
-//   node scripts/congelar-pnip.mjs conferir
+//   node scripts/congelar-pnip.mjs congelar [--origem ../pnip-mock/dist/pnip-mock] [--ala pnip]
+//   node scripts/congelar-pnip.mjs conferir [--ala pnip]
+//
+// `--ala` escolhe a pasta de public/ e o base href (/<ala>/). Padrão `pnip` (tela B, D-57). A tela C
+// (D-134) tem ala própria, `pnip-c`, para não mudar um byte da tela B:
+//   (pnip-mock) node mock-tools/build-mock.mjs --base-href /pnip-c/ --output-path dist/pnip-c
+//   node scripts/congelar-pnip.mjs congelar --origem ../pnip-mock/dist/pnip-c --ala pnip-c
 //
 // `congelar` copia a árvore inteira do build (chunks lazy incluídos) e reescreve
 // public/pnip/manifesto.json com a proveniência e o sha256 de cada arquivo. O build tem de ter sido
@@ -15,8 +20,11 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const RAIZ = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const DESTINO = join(RAIZ, "public", "pnip");
 const MANIFESTO = "manifesto.json";
+const ARGS = process.argv.slice(3);
+const ALA = ARGS.includes("--ala") ? ARGS[ARGS.indexOf("--ala") + 1] : "pnip";
+if (!/^pnip(-[a-z0-9]+)?$/.test(ALA)) throw new Error(`--ala inválida: ${ALA}`);
+const DESTINO = join(RAIZ, "public", ALA);
 
 const sha256 = (buf) => createHash("sha256").update(buf).digest("hex");
 
@@ -41,6 +49,8 @@ function congelar(origem) {
   if (git(repo, "status", "--porcelain")) throw new Error(`pnip-mock com alterações locais: o commit ${commit} não descreveria o build.`);
   const arquivos = listar(origem);
   const mapas = arquivos.filter((f) => f.endsWith(".map"));
+  const base = readFileSync(join(origem, "index.html"), "utf8").match(/<base href="([^"]+)"/)?.[1];
+  if (base !== `/${ALA}/`) throw new Error(`O build tem base href ${base}, e a ala ${ALA} pede /${ALA}/.`);
   if (mapas.length) throw new Error(`O build traz source maps (${mapas.join(", ")}): o código-fonte do mock iria junto.`);
   const pacote = (nome) => JSON.parse(readFileSync(join(repo, "node_modules", nome, "package.json"), "utf8")).version;
 
@@ -54,7 +64,7 @@ function congelar(origem) {
   }
   const manifesto = {
     _meta: {
-      o_que_e: "Build estático do modo mock da aplicação PNIP (Angular 15), servido em /pnip/. O código de produção roda de verdade: roteamento, guards, componentes e web components do gov.br DS. Só a sessão, o backend HTTP e os recursos externos são substituídos, dentro do navegador.",
+      o_que_e: `Build estático do modo mock da aplicação PNIP (Angular 15), servido em /${ALA}/. O código de produção roda de verdade: roteamento, guards, componentes e web components do gov.br DS. Só a sessão, o backend HTTP e os recursos externos são substituídos, dentro do navegador.`,
       dados: "Somente dados fictícios: usuária, CPFs, CNPJs, embarcações, e-mails e endereços são inventados. Nenhum dado de produção.",
       uso: "Uso autorizado pela equipe do projeto para execução local. Sem requisições externas.",
       regra: "Reproduzir, nunca reparar: a árvore é o build como saiu, byte a byte. Nada aqui é editado à mão; mudar a tela é refazer o build no pnip-mock e congelar de novo.",
@@ -72,7 +82,7 @@ function congelar(origem) {
       configuracao: "ng build --configuration mock",
       node: process.env.PNIP_BUILD_NODE ?? "16.20.2",
       angular: pacote("@angular/core"),
-      baseHref: "/pnip/",
+      baseHref: `/${ALA}/`,
       sourceMaps: false,
     },
     ds: { core: pacote("@govbr-ds/core"), webcomponents: pacote("@govbr-ds/webcomponents") },
@@ -81,7 +91,7 @@ function congelar(origem) {
     arquivos: hashes,
   };
   writeFileSync(join(DESTINO, MANIFESTO), JSON.stringify(manifesto, null, 2) + "\n");
-  console.log(`public/pnip/: ${arquivos.length} arquivos congelados de pnip-mock@${commit.slice(0, 7)}`);
+  console.log(`public/${ALA}/: ${arquivos.length} arquivos congelados de pnip-mock@${commit.slice(0, 7)}`);
 }
 
 function conferir() {
@@ -97,7 +107,7 @@ function conferir() {
     console.error(erros.join("\n"));
     process.exit(1);
   }
-  console.log(`public/pnip/: ${esperados.length} arquivos conferem com o manifesto`);
+  console.log(`public/${ALA}/: ${esperados.length} arquivos conferem com o manifesto`);
 }
 
 const [comando, ...args] = process.argv.slice(2);
@@ -107,6 +117,6 @@ if (comando === "congelar") {
 } else if (comando === "conferir") {
   conferir();
 } else {
-  console.error("Uso: node scripts/congelar-pnip.mjs congelar [--origem DIR] | conferir");
+  console.error("Uso: node scripts/congelar-pnip.mjs congelar [--origem DIR] [--ala pnip] | conferir [--ala pnip]");
   process.exit(1);
 }

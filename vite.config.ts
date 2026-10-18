@@ -8,16 +8,21 @@ import react from "@vitejs/plugin-react";
  * /assets/images/exit-icon.png — o template sobe três níveis e sai do prefixo sob o base href —,
  * então esse caminho, e só ele, é servido da árvore pnip/. O build congelado nunca é editado: o
  * middleware só reescreve a URL, e quem entrega os bytes é o servidor estático do próprio Vite.
+ *
+ * Ala pnip-c/ (tela C, D-134): outro build do mesmo pnip-mock, base href /pnip-c/, com as mesmas
+ * regras. O alias do "Sair" continua servido pela ala pnip/ (o arquivo é o mesmo nas duas; a
+ * superfície de medida serve cada tela com o alias da própria árvore, telas.json).
  */
-const PNIP_PREFIXO = "/pnip/";
+const PNIP_PREFIXOS = ["/pnip/", "/pnip-c/"];
 const PNIP_ALIASES: Record<string, string> = { "/assets/images/exit-icon.png": "/pnip/assets/images/exit-icon.png" };
 
-/** Destino da reescrita, ou `null` quando o pedido não é da ala pnip/. */
+/** Destino da reescrita, ou `null` quando o pedido não é de uma das alas pnip/ e pnip-c/. */
 function pnipRota(path: string): string | null {
   if (PNIP_ALIASES[path]) return PNIP_ALIASES[path];
-  if (!path.startsWith(PNIP_PREFIXO)) return null;
+  const prefixo = PNIP_PREFIXOS.find((p) => path.startsWith(p));
+  if (!prefixo) return null;
   const ultimo = path.slice(path.lastIndexOf("/") + 1);
-  return ultimo.includes(".") ? null : `${PNIP_PREFIXO}index.html`;
+  return ultimo.includes(".") ? null : `${prefixo}index.html`;
 }
 
 interface Pedido { url?: string; method?: string }
@@ -30,9 +35,10 @@ function pnipSpa(): Plugin {
     if (req.method !== "GET" && req.method !== "HEAD") return next();
     const url = new URL(req.url ?? "/", "http://corpus");
     const path = decodeURIComponent(url.pathname);
-    if (path === "/pnip") {
+    const semBarra = PNIP_PREFIXOS.find((p) => path === p.slice(0, -1));
+    if (semBarra) {
       res.statusCode = 302;
-      res.setHeader("location", PNIP_PREFIXO + url.search);
+      res.setHeader("location", semBarra + url.search);
       return res.end();
     }
     const destino = pnipRota(path);
