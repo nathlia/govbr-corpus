@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="refresh" content="300">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acompanhar requerimento — Atendimento gov.br</title>
+<link rel="stylesheet" href="/src/acompanhamento/acompanhamento.css">
+</head>
+<body>
+<nav class="br-skiplink atalhos-pagina" role="menubar"><a class="br-item" href="#main-content" role="menuitem" accesskey="1">Ir para o conteúdo <span aria-hidden="true">(1/2)</span> <span aria-hidden="true" class="br-tag text ml-1">1</span></a><a class="br-item" href="#rodape" role="menuitem" accesskey="2">Ir para o rodapé <span aria-hidden="true">(2/2)</span> <span aria-hidden="true" class="br-tag text ml-1">2</span></a>
+</nav>
+
+<header class="br-header cabecalho-servico" id="cabecalho">
+  <div class="container-lg">
+    <div class="header-top">
+      <div class="header-logo"><img src="/acompanhamento/marca-govbr.svg" alt="gov.br"/><span class="br-divider vertical"></span>
+        <div class="header-sign">Atendimento ao Cidadão</div>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <div class="header-menu">
+        <div class="header-info">
+          <div class="header-title">Acompanhamento de Requerimentos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content" class="area-acompanhamento">
+  <div class="container-lg">
+    <nav class="br-breadcrumb trilha-servico" aria-label="Breadcrumbs">
+      <ol class="crumb-list" role="list">
+        <li class="crumb home"><a class="br-button circle" href="meus-requerimentos.html"><span class="sr-only">Página inicial</span><i class="fas fa-home" aria-hidden="true"></i></a></li>
+        <li class="crumb"><i class="icon fas fa-chevron-right" aria-hidden="true"></i><a href="meus-requerimentos.html">Meus requerimentos</a>
+        </li>
+        <li class="crumb" data-active="active"><i class="icon fas fa-chevron-right" aria-hidden="true"></i><span tabindex="0" aria-current="page">Acompanhar requerimento</span>
+        </li>
+      </ol>
+    </nav>
+
+    <h1 class="titulo-pagina" tabindex="-1">Acompanhar Requerimento</h1>
+
+    <div class="br-message warning aviso-pendencia" id="msg-pendencia">
+      <div class="icon"><i class="fas fa-exclamation-triangle fa-lg" aria-hidden="true"></i><span class="sr-only">Alerta</span>
+      </div>
+      <div class="content" role="alert" align="left"><font color="#333333"><span class="message-title">Documento pendente.</span><span class="message-body"> Envie o comprovante de residência na aba Documentos até 20/11/2026.</span></font></div>
+      <div class="close">
+        <button class="br-button circle small fechar-mensagem" type="button" aria-label="Fechar"><i class="fas fa-times" aria-hidden="true"></i><span class="rotulo-botao sr-only">Fechar</span></button>
+        <div class="br-tooltip" role="tooltip" info="info" place="top"><span class="text" role="tooltip">Fechar</span></div>
+      </div>
+    </div>
+
+    <div class="br-card resumo-requerimento" id="crd-resumo">
+      <div class="card-header">
+        <div class="text-weight-semi-bold text-up-02">Revisão de Benefício Assistencial</div>
+      </div>
+      <div class="card-content">
+        <div class="dado-resumo">Número Único de Protocolo (NUP): 00190.000123/2026-41
+          <button class="br-button circle ajuda-resumo ajuda-protocolo" type="button" id="tip-protocolo-gatilho" aria-label="Ajuda sobre o NUP" aria-labelledby="tip-protocolo"><i class="fas fa-question-circle" aria-hidden="true"></i><span class="rotulo-botao">Ajuda sobre o NUP</span></button>
+          <div class="br-tooltip" role="tooltip" info="info" place="bottom" id="tip-protocolo"><span class="text" role="tooltip">Use o NUP para consultar</span></div>
+        </div>
+        <div class="dado-resumo">Serviço: Revisão de benefício assistencial</div>
+        <div class="dado-resumo">Situação: Em análise</div>
+        <div class="dado-resumo">Prazo de análise: até 30 dias
+          <button class="br-button circle ajuda-resumo ajuda-prazo" type="button" id="tip-prazo-gatilho" aria-label="Ajuda sobre o prazo" aria-labelledby="tip-prazo"><i class="fas fa-question-circle" aria-hidden="true"></i><span class="rotulo-botao">Ajuda sobre o prazo</span></button>
+          <div class="br-tooltip" role="tooltip" info="info" place="top" id="tip-prazo"><span class="text" role="tooltip">Prazo em dias corridos</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="detalhe-resumo" href="#tab-requerimento">Ver andamento detalhado</a>
+      </div>
+    </div>
+
+    <div class="br-tab abas-requerimento" id="tab-requerimento">
+      <nav class="tab-nav" aria-label="Seções do requerimento">
+        <ul role="tablist">
+          <li class="tab-item active">
+            <button type="button" role="tab" id="aba-andamento" data-panel="painel-andamento" aria-controls="painel-andamento" aria-selected="true"><span class="name">Andamento</span></button>
+          </li>
+          <li class="tab-item">
+            <button type="button" role="tab" id="aba-documentos" data-panel="painel-documentos" aria-controls="painel-documentos" aria-selected="false"><span class="name">Documentos</span></button>
+          </li>
+        </ul>
+      </nav>
+      <span class="br-divider separador-abas"></span>
+      <div class="tab-content">
+        <div class="tab-panel active" id="painel-andamento" role="tabpanel" aria-labelledby="aba-andamento">
+          <nav class="br-step etapas-requerimento" id="stp-andamento" data-initial="2" data-label="bottom" role="none">
+            <div class="step-progress" role="listbox" aria-orientation="horizontal" aria-label="Etapas do requerimento">
+              <button class="step-progress-btn etapa-envio" role="option" aria-posinset="1" aria-setsize="4" type="button" data-alert="success"><span class="step-info">Envio<span class="sr-only">, etapa concluída</span></span><span class="step-alert"></span></button>
+              <button class="step-progress-btn etapa-analise" role="option" aria-posinset="2" aria-setsize="4" type="button"><span class="step-info">Análise</span></button>
+              <button class="step-progress-btn etapa-decisao" role="option" aria-posinset="3" aria-setsize="4" type="button" disabled><span class="step-info">Decisão</span></button>
+              <button class="step-progress-btn etapa-conclusao" role="option" aria-posinset="4" aria-setsize="4" type="button" disabled><span class="step-info">Conclusão</span></button>
+            </div>
+          </nav>
+
+          <div class="br-table movimentacoes-requerimento" id="tbl-movimentacoes">
+            <div class="table-header">
+              <div class="top-bar">
+                <div class="table-title">Movimentações do Requerimento</div>
+              </div>
+            </div>
+            <table>
+              <caption>Movimentações do Requerimento</caption>
+              <thead>
+                <tr>
+                  <th id="mov-data">Data</th>
+                  <th id="mov-descricao">Movimentação</th>
+                  <th id="mov-responsavel">Responsável</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td headers="mov-data">27/10/2026</td>
+                  <td headers="mov-descricao">Documento solicitado: comprovante de residência</td>
+                  <td headers="mov-responsavel">Equipe de análise</td>
+                </tr>
+                <tr>
+                  <td headers="mov-data">21/10/2026</td>
+                  <td headers="mov-descricao">Análise iniciada</td>
+                  <td headers="mov-responsavel">Equipe de análise</td>
+                </tr>
+                <tr>
+                  <td headers="mov-data">14/10/2026</td>
+                  <td headers="mov-descricao">Requerimento distribuído</td>
+                  <td headers="mov-responsavel">Central de atendimento</td>
+                </tr>
+                <tr>
+                  <td headers="mov-data">09/10/2026</td>
+                  <td headers="mov-descricao">Documentos iniciais conferidos</td>
+                  <td headers="mov-responsavel">Central de atendimento</td>
+                </tr>
+                <tr>
+                  <td headers="mov-data">08/10/2026</td>
+                  <td headers="mov-descricao">Requerimento recebido</td>
+                  <td headers="mov-responsavel">Sistema de atendimento</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="painel-documentos" role="tabpanel" aria-labelledby="aba-documentos">
+          <h2 class="titulo-formulario">Enviar Documento Pendente</h2>
+          <form class="formulario-documento" novalidate>
+            <div class="retorno-formulario"></div>
+            <p class="apoio-formulario">Todos os campos são obrigatórios.</p>
+
+            <div class="campo campo-tipo-documento">
+              <div class="br-select" id="sel-tipo-documento">
+                <div class="br-input">
+                  <label for="tipo-documento">Tipo de documento</label>
+                  <input id="tipo-documento" type="text" placeholder="Selecione o tipo do documento pendente"/>
+                  <button class="br-button" type="button" aria-label="Exibir lista" data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i></button>
+                  <div class="br-tooltip" role="tooltip" info="info" place="top"><span class="text" role="tooltip">Exibir lista</span></div>
+                </div>
+                <div class="br-list" tabindex="0">
+                  <div class="br-item" tabindex="-1">
+                    <div class="br-radio">
+                      <input id="tipo-documento-op0" type="radio" name="tipo-documento-opcoes" value="comprovante-residencia"/>
+                      <label for="tipo-documento-op0">Comprovante de residência</label>
+                    </div>
+                  </div>
+                  <div class="br-item" tabindex="-1">
+                    <div class="br-radio">
+                      <input id="tipo-documento-op1" type="radio" name="tipo-documento-opcoes" value="documento-identidade"/>
+                      <label for="tipo-documento-op1">Documento de identidade</label>
+                    </div>
+                  </div>
+                  <div class="br-item" tabindex="-1">
+                    <div class="br-radio">
+                      <input id="tipo-documento-op2" type="radio" name="tipo-documento-opcoes" value="procuracao"/>
+                      <label for="tipo-documento-op2">Procuração</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="campo campo-arquivo">
+              <div class="br-upload" id="upl-documento">
+                <label class="upload-label" for="arquivo-documento"><span>Envio de documento</span></label>
+                <input class="upload-input" id="arquivo-documento" type="file" aria-describedby="arquivo-apoio"/>
+                <div class="upload-list"></div>
+              </div>
+              <p class="text-base mt-1 apoio-arquivo" id="arquivo-apoio">Você também pode arrastar o arquivo até a área acima.</p>
+            </div>
+
+            <div class="acoes-formulario">
+              <button class="br-button primary acao-enviar" type="submit">Enviar documento</button>
+            </div>
+          </form>
+
+          <p class="titulo-avisos">Avisos sobre o requerimento</p>
+          <fieldset class="grupo-avisos" id="fs-avisos">
+            <div class="item-aviso">
+              <div class="br-checkbox avisos-todos" id="chk-avisos-todos">
+                <input id="avisos-todos" name="avisos-todos" type="checkbox" data-parent="avisos"/>
+                <label for="avisos-todos">Todos os avisos</label>
+              </div>
+            </div>
+            <div class="item-aviso">
+              <div class="br-switch aviso-email" role="presentation" id="swt-aviso-email">
+                <input id="aviso-email" type="checkbox" name="aviso-email" role="switch" aria-checked="false" data-child="avisos"/>
+                <label for="aviso-email">Receber avisos por e-mail</label>
+              </div>
+            </div>
+            <div class="item-aviso">
+              <div class="br-switch aviso-sms" role="presentation" id="swt-aviso-sms">
+                <input id="aviso-sms" type="checkbox" name="aviso-sms" role="switch" aria-checked="false" data-child="avisos"/>
+                <label for="aviso-sms">Receber avisos por SMS</label>
+              </div>
+            </div>
+          </fieldset>
+          <p class="situacao-avisos" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+
+    <span class="br-divider separador-secoes" id="div-secoes"></span>
+
+    <section class="secao-duvidas" aria-labelledby="titulo-duvidas">
+      <h2 class="titulo-duvidas" id="titulo-duvidas">Dúvidas Frequentes</h2>
+      <div class="br-accordion duvidas-frequentes" id="acc-duvidas" single>
+        <div class="item">
+          <button class="header" type="button" aria-controls="acc-duvidas-1" aria-expanded="false"><span class="icon"><i class="fas fa-angle-down" aria-hidden="true"></i></span><span class="title">Como envio o documento pendente?</span></button>
+        </div>
+        <div class="content" id="acc-duvidas-1">
+          <p>Na aba Documentos, escolha o tipo, selecione o arquivo e use Enviar documento.</p>
+        </div>
+        <div class="item">
+          <button class="header" type="button" aria-controls="acc-duvidas-2" aria-expanded="false"><span class="icon"><i class="fas fa-angle-down" aria-hidden="true"></i></span><span class="title">Quanto tempo leva a análise?</span></button>
+        </div>
+        <div class="content" id="acc-duvidas-2">
+          <p>A análise leva até 30 dias corridos, contados do envio do último documento.</p>
+        </div>
+        <div class="item">
+          <button class="header" type="button" aria-controls="acc-duvidas-3" aria-expanded="false"><span class="icon"><i class="fas fa-angle-down" aria-hidden="true"></i></span><span class="title">Como recebo os avisos do requerimento?</span></button>
+        </div>
+        <div class="content" id="acc-duvidas-3">
+          <p>Ligue os avisos por e-mail ou por SMS na aba Documentos.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="acoes-pagina">
+      <a class="br-button secondary acao-voltar" href="meus-requerimentos.html">Voltar para meus requerimentos</a>
+    </div>
+  </div>
+</main>
+
+<footer class="br-footer rodape-servico" id="rodape">
+  <div class="container-lg">
+    <div class="logo"><img src="/acompanhamento/marca-govbr-negativa.svg" alt="gov.br"/></div>
+  </div><span class="br-divider my-3"></span>
+  <div class="container-lg">
+    <div class="info">
+      <div class="text-down-01 text-medium pb-3">Todo o conteúdo deste site está publicado sob a licença&nbsp;<strong>Creative Commons Atribuição-SemDerivações 3.0 Não Adaptada.</strong></div>
+    </div>
+  </div>
+</footer>
+
+<script src="/acompanhamento/core.min.js"></script>
+<script src="/acompanhamento/comportamento.js"></script>
+</body>
+</html>

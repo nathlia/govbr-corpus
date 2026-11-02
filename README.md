@@ -107,6 +107,10 @@ trazem as páginas, com nomes opacos. Cada pasta tem um `manifesto.json` com o s
 arquivo; `npm run controles:conferir` falha se algo faltar, sobrar ou mudar. As páginas são geradas
 no `govbr-eval` e nunca editadas aqui.
 
+`c/` é a extensão de desenvolvimento do validator 3.7.0 (gerada por `govbr-eval/controles/extensao-370/construir.mjs`,
+que escreve também a cópia idêntica em `dist/controles/c/`): fora do catálogo congelado que produz `a/` e `b/`, com
+nomes opacos e o mesmo `manifesto.json` com sha256, conferido pelo mesmo `npm run controles:conferir`.
+
 ## Structure
 
 ```
