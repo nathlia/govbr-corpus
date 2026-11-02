@@ -1,0 +1,14 @@
+{
+  "_meta": {
+    "o_que_e": "Páginas estáticas da Biblioteca Municipal (serviço fictício de reservas e renovação de empréstimos), servidas sem rede.",
+    "regra": "Reproduzir, nunca reparar: os arquivos são gerados e conferidos byte a byte. Não edite à mão.",
+    "ala": "c"
+  },
+  "arquivos": {
+    "c-309bc0cd86.html": "ac720907c1f406968cc24063cc818046ae2d7a53a9458842649ae30503d2720e",
+    "c-35c7f832c2.html": "02e21b7c89a9c37528c7dd99ebbb757799b677e2e0b9c95f4abeaac5fe79a911",
+    "c-4476aaa96a.html": "588505a5bf65ec234e179624416b75411b17a98b105d88b265bc107fdba1df76",
+    "c-9b45110f14.html": "4e327d729e3fbb88247a6befd408c55ec2f6ef5aeb00a6a84d94b3ccfd540e72",
+    "c-a5f933830c.html": "31fd993d39aea1f55c24702d563ddd2e9247500e1d7e5d9f5068ecdeadfa82d9"
+  }
+}
