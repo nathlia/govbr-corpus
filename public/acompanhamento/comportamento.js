@@ -11,8 +11,14 @@
   var enviar = document.querySelector('.acao-enviar');
   var retorno = document.querySelector('.retorno-formulario');
 
+  // a posição do balão é refeita a cada abertura, com o layout do momento
   function ligarBaloes(raiz) {
-    raiz.querySelectorAll('.br-tooltip').forEach(function (balao) { new core.BRTooltip('br-tooltip', balao); });
+    raiz.querySelectorAll('.br-tooltip').forEach(function (balao) {
+      var instancia = new core.BRTooltip('br-tooltip', balao);
+      instancia.showEvents.forEach(function (evento) {
+        instancia.activator.addEventListener(evento, function () { instancia.popperInstance.update(); });
+      });
+    });
   }
 
   function ligarMensagem(mensagem, destinoDoFoco) {

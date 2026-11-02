@@ -47,7 +47,9 @@
 }
 
 .ajuda-resumo {
+  flex: none;
   margin-left: var(--spacing-scale-base);
+  margin-right: calc(var(--spacing-scale-base) + 10em);
   overflow: visible;
 }
 

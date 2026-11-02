@@ -9,13 +9,14 @@
 <link rel="stylesheet" href="/src/acompanhamento/acompanhamento.css">
 </head>
 <body>
-<nav class="br-skiplink atalhos-pagina" role="menubar"><a class="br-item" href="#main-content" role="menuitem" accesskey="1">Ir para o conteúdo <span aria-hidden="true">(1/2)</span> <span aria-hidden="true" class="br-tag text ml-1">1</span></a><a class="br-item" href="#rodape" role="menuitem" accesskey="2">Ir para o rodapé <span aria-hidden="true">(2/2)</span> <span aria-hidden="true" class="br-tag text ml-1">2</span></a>
+<nav class="br-skiplink atalhos-pagina"><a class="br-item" href="#main-content" accesskey="1">Ir para o conteúdo <span aria-hidden="true">(1/2)</span> <span aria-hidden="true" class="br-tag text ml-1">1</span></a><a class="br-item" href="#rodape" accesskey="2">Ir para o rodapé <span aria-hidden="true">(2/2)</span> <span aria-hidden="true" class="br-tag text ml-1">2</span></a>
 </nav>
+<noscript><p>Esta página precisa de JavaScript para exibir as abas, a lista de tipos de documento e o envio do documento.</p></noscript>
 
 <header class="br-header cabecalho-servico" id="cabecalho">
   <div class="container-lg">
     <div class="header-top">
-      <div class="header-logo"><img src="/acompanhamento/marca-govbr.svg" alt="gov.br"/><span class="br-divider vertical"></span>
+      <div class="header-logo"><img src="/acompanhamento/marca-govbr.svg" alt="gov.br"><span class="br-divider vertical"></span>
         <div class="header-sign">Atendimento ao Cidadão</div>
       </div>
     </div>
@@ -31,12 +32,12 @@
 
 <main id="main-content" class="area-acompanhamento">
   <div class="container-lg">
-    <nav class="br-breadcrumb trilha-servico" aria-label="Breadcrumbs">
+    <nav class="br-breadcrumb trilha-servico" aria-label="Trilha de navegação">
       <ol class="crumb-list" role="list">
-        <li class="crumb home"><a class="br-button circle" href="meus-requerimentos.html"><span class="sr-only">Página inicial</span><i class="fas fa-home" aria-hidden="true"></i></a></li>
-        <li class="crumb"><i class="icon fas fa-chevron-right" aria-hidden="true"></i><a href="meus-requerimentos.html">Meus requerimentos</a>
+        <li class="crumb home"><a class="br-button circle" href="inicio.html"><span class="sr-only">Página Inicial</span><i class="fas fa-home" aria-hidden="true"></i></a></li>
+        <li class="crumb"><i class="icon fas fa-chevron-right" aria-hidden="true"></i><a href="meus-requerimentos.html">Meus Requerimentos</a>
         </li>
-        <li class="crumb" data-active="active"><i class="icon fas fa-chevron-right" aria-hidden="true"></i><span tabindex="0" aria-current="page">Acompanhar requerimento</span>
+        <li class="crumb" data-active="active"><i class="icon fas fa-chevron-right" aria-hidden="true"></i><span aria-current="page">Acompanhar requerimento</span>
         </li>
       </ol>
     </nav>
@@ -153,26 +154,26 @@
               <div class="br-select" id="sel-tipo-documento">
                 <div class="br-input">
                   <label for="tipo-documento">Tipo de documento</label>
-                  <input id="tipo-documento" type="text" placeholder="Selecione o tipo do documento pendente"/>
+                  <input id="tipo-documento" type="text" placeholder="Selecione o tipo do documento pendente">
                   <button class="br-button" type="button" aria-label="Exibir lista" data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i></button>
                   <div class="br-tooltip" role="tooltip" info="info" place="top"><span class="text" role="tooltip">Exibir lista</span></div>
                 </div>
                 <div class="br-list" tabindex="0">
                   <div class="br-item" tabindex="-1">
                     <div class="br-radio">
-                      <input id="tipo-documento-op0" type="radio" name="tipo-documento-opcoes" value="comprovante-residencia"/>
+                      <input id="tipo-documento-op0" type="radio" name="tipo-documento-opcoes" value="comprovante-residencia">
                       <label for="tipo-documento-op0">Comprovante de residência</label>
                     </div>
                   </div>
                   <div class="br-item" tabindex="-1">
                     <div class="br-radio">
-                      <input id="tipo-documento-op1" type="radio" name="tipo-documento-opcoes" value="documento-identidade"/>
+                      <input id="tipo-documento-op1" type="radio" name="tipo-documento-opcoes" value="documento-identidade">
                       <label for="tipo-documento-op1">Documento de identidade</label>
                     </div>
                   </div>
                   <div class="br-item" tabindex="-1">
                     <div class="br-radio">
-                      <input id="tipo-documento-op2" type="radio" name="tipo-documento-opcoes" value="procuracao"/>
+                      <input id="tipo-documento-op2" type="radio" name="tipo-documento-opcoes" value="procuracao">
                       <label for="tipo-documento-op2">Procuração</label>
                     </div>
                   </div>
@@ -183,14 +184,14 @@
             <div class="campo campo-arquivo">
               <div class="br-upload" id="upl-documento">
                 <label class="upload-label" for="arquivo-documento"><span>Envio de documento</span></label>
-                <input class="upload-input" id="arquivo-documento" type="file" aria-describedby="arquivo-apoio"/>
+                <input class="upload-input" id="arquivo-documento" type="file" aria-describedby="arquivo-apoio">
                 <div class="upload-list"></div>
               </div>
               <p class="text-base mt-1 apoio-arquivo" id="arquivo-apoio">Você também pode arrastar o arquivo até a área acima.</p>
             </div>
 
             <div class="acoes-formulario">
-              <button class="br-button primary acao-enviar" type="submit">Enviar documento</button>
+              <button class="br-button primary acao-enviar" type="submit">Enviar Documento</button>
             </div>
           </form>
 
@@ -198,20 +199,20 @@
           <fieldset class="grupo-avisos" id="fs-avisos">
             <div class="item-aviso">
               <div class="br-checkbox avisos-todos" id="chk-avisos-todos">
-                <input id="avisos-todos" name="avisos-todos" type="checkbox" data-parent="avisos"/>
+                <input id="avisos-todos" name="avisos-todos" type="checkbox" data-parent="avisos">
                 <label for="avisos-todos">Todos os avisos</label>
               </div>
             </div>
             <div class="item-aviso">
               <div class="br-switch aviso-email" role="presentation" id="swt-aviso-email">
-                <input id="aviso-email" type="checkbox" name="aviso-email" role="switch" aria-checked="false" data-child="avisos"/>
+                <input id="aviso-email" type="checkbox" name="aviso-email" role="switch" aria-checked="false" data-child="avisos">
                 <label for="aviso-email">Receber avisos por e-mail</label>
               </div>
             </div>
             <div class="item-aviso">
               <div class="br-switch aviso-sms" role="presentation" id="swt-aviso-sms">
-                <input id="aviso-sms" type="checkbox" name="aviso-sms" role="switch" aria-checked="false" data-child="avisos"/>
-                <label for="aviso-sms">Receber avisos por SMS</label>
+                <input id="aviso-sms" type="checkbox" name="aviso-sms" role="switch" aria-checked="false" data-child="avisos">
+                <label for="aviso-sms">Receber avisos por SMS (mensagem de texto no celular)</label>
               </div>
             </div>
           </fieldset>
@@ -229,7 +230,7 @@
           <button class="header" type="button" aria-controls="acc-duvidas-1" aria-expanded="false"><span class="icon"><i class="fas fa-angle-down" aria-hidden="true"></i></span><span class="title">Como envio o documento pendente?</span></button>
         </div>
         <div class="content" id="acc-duvidas-1">
-          <p>Na aba Documentos, escolha o tipo, selecione o arquivo e use Enviar documento.</p>
+          <p>Na aba Documentos, escolha o tipo, selecione o arquivo e use Enviar Documento.</p>
         </div>
         <div class="item">
           <button class="header" type="button" aria-controls="acc-duvidas-2" aria-expanded="false"><span class="icon"><i class="fas fa-angle-down" aria-hidden="true"></i></span><span class="title">Quanto tempo leva a análise?</span></button>
@@ -247,14 +248,14 @@
     </section>
 
     <div class="acoes-pagina">
-      <a class="br-button secondary acao-voltar" href="meus-requerimentos.html">Voltar para meus requerimentos</a>
+      <a class="br-button secondary acao-voltar" href="meus-requerimentos.html">Meus Requerimentos</a>
     </div>
   </div>
 </main>
 
 <footer class="br-footer rodape-servico" id="rodape">
   <div class="container-lg">
-    <div class="logo"><img src="/acompanhamento/marca-govbr-negativa.svg" alt="gov.br"/></div>
+    <div class="logo"><img src="/acompanhamento/marca-govbr-negativa.svg" alt="gov.br"></div>
   </div><span class="br-divider my-3"></span>
   <div class="container-lg">
     <div class="info">
