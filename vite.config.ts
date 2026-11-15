@@ -66,10 +66,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       // Páginas independentes de propósito: a suíte de casos TC-*, a tela de fluxo, a tela de
-      // solicitação e a de acompanhamento. Entradas separadas garantem que o bundle de uma tela não carregue nada das
+      // solicitação, a de acompanhamento e a de cadastro de país. Entradas separadas garantem que o bundle de uma tela não carregue nada das
       // outras — um agente que abre /fluxo.html ou /solicitacao.html não tem como topar com a
       // grade TC-*.
-      input: { main: "index.html", fluxo: "fluxo.html", solicitacao: "solicitacao.html", acompanhamento: "acompanhamento.html" },
+      input: { main: "index.html", fluxo: "fluxo.html", solicitacao: "solicitacao.html", acompanhamento: "acompanhamento.html", "cadastro-pais": "cadastro-pais.html" },
     },
   },
 });

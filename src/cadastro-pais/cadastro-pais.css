@@ -1,0 +1,8 @@
+/*
+ * Folhas da tela de cadastro de país importador, na ordem da cascata: Font Awesome empacotado, a
+ * fonte Rawline, o DS e a folha própria da tela. Nada vem de CDN: a tela é servida sem rede.
+ */
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import "../acompanhamento/rawline.css";
+@import "@govbr-ds/core/dist/core.min.css";
+@import "./pagina.css";

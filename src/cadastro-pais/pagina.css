@@ -1,0 +1,158 @@
+/*
+ * Folha da tela de cadastro de país importador.
+ *
+ * Mesma regra do `portal.css` e das outras telas (D-24): classe nomeada pelo LUGAR que ocupa na
+ * tela, nunca pelo efeito que aplica.
+ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.area-cadastro {
+  padding-bottom: var(--spacing-scale-5x);
+}
+
+/* mensagem de uso geral: a superfície ocupa a largura da tela e o conteúdo fica na área útil da grid */
+.mensagem-servico {
+  --faixa-margem: var(--grid-portrait-margin);
+  --faixa-largura: var(--grid-portrait-maxwidth);
+  margin-bottom: 0;
+  padding-left: calc((100% - min(100%, var(--faixa-largura))) / 2 + var(--faixa-margem));
+  padding-right: calc((100% - min(100%, var(--faixa-largura))) / 2 + var(--faixa-margem));
+}
+
+@media (min-width: 576px) {
+  .mensagem-servico {
+    --faixa-margem: var(--grid-tablet-margin);
+  }
+}
+
+@media (min-width: 1280px) {
+  .mensagem-servico {
+    --faixa-margem: var(--grid-desktop-margin);
+    --faixa-largura: calc(var(--grid-breakpoint-lg) - var(--grid-desktop-margin));
+  }
+}
+
+.trilha-servico {
+  margin-top: var(--spacing-scale-2x);
+}
+
+.titulo-cadastro {
+  align-items: center;
+  display: flex;
+  gap: var(--spacing-scale-2x);
+}
+
+.titulo-formulario,
+.titulo-secao {
+  margin-top: var(--spacing-scale-2x);
+}
+
+.formulario-pais {
+  max-width: 640px;
+}
+
+.retorno-envio {
+  margin-bottom: var(--spacing-scale-3x);
+}
+
+.formulario-pais .retorno-envio {
+  --message-background: var(--blue-warm-vivid-50);
+  --message-color-icon: var(--pure-0);
+  --message-text: var(--pure-0);
+}
+
+.retorno-envio .marca-retorno {
+  margin-right: var(--spacing-scale-base);
+}
+
+.campo {
+  margin-bottom: var(--spacing-scale-3x);
+}
+
+.campo-nome,
+.campo-continente {
+  max-width: 400px;
+}
+
+.campo-codigo {
+  max-width: 200px;
+}
+
+.campo-codigo .br-input {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.apoio-campo {
+  font-size: var(--font-size-scale-base);
+  margin-top: var(--spacing-scale-half);
+}
+
+.campo-continente .br-item {
+  --text-color: #aaa;
+}
+
+.grupo-situacao .rotulo-situacao {
+  text-align: center;
+  width: 100%;
+}
+
+.opcoes-situacao {
+  width: max-content;
+}
+
+/* grupo obrigatório: a borda de erro só aparece depois do envio (classe invalid do DS), não na carga */
+.grupo-situacao .br-radio:not(.invalid) input:invalid + label::before {
+  border-color: var(--border-color);
+}
+
+.opcoes-situacao .br-radio {
+  margin-bottom: var(--spacing-scale-base);
+}
+
+.acoes-formulario {
+  display: flex;
+  gap: var(--spacing-scale-2x);
+  justify-content: flex-end;
+  margin-bottom: var(--spacing-scale-5x);
+}
+
+.acoes-formulario .acao-limpar {
+  order: 1;
+}
+
+.secao-configuracao {
+  margin-bottom: var(--spacing-scale-2x);
+}
+
+.situacao-configuracao {
+  margin-top: var(--spacing-scale-base);
+  min-height: var(--spacing-scale-3x);
+}
+
+.separador-secoes {
+  margin: var(--spacing-scale-3x) 0;
+}
+
+.lista-paises .item-pais {
+  height: 74px;
+  overflow: hidden;
+}
+
+.rodape-servico .logo img {
+  height: 48px;
+}

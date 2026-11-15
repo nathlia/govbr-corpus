@@ -9,3 +9,5 @@ public/controles/** -text
 public/pnip-c/** -text
 # A ala pnip-d/ (tela D, processos) também: build congelado byte a byte (public/pnip-d/manifesto.json).
 public/pnip-d/** -text
+# A cópia do core.js da tela de cadastro de país é conferida byte a byte contra o pacote @govbr-ds/core 3.7.0.
+public/cadastro-pais/core.min.js -text
