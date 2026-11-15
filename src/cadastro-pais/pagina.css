@@ -99,7 +99,7 @@
 
 .apoio-campo {
   font-size: var(--font-size-scale-base);
-  margin-top: var(--spacing-scale-half);
+  margin-top: var(--spacing-scale-base);
 }
 
 .campo-continente .br-item {
