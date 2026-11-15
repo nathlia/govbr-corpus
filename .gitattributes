@@ -11,3 +11,15 @@ public/pnip-c/** -text
 public/pnip-d/** -text
 # A cópia do core.js da tela de cadastro de país é conferida byte a byte contra o pacote @govbr-ds/core 3.7.0.
 public/cadastro-pais/core.min.js -text
+# Página construída da tela E (cadastro-pais): fins de linha fixados para que qualquer checkout (com ou sem
+# core.autocrlf) gere o mesmo dist/ que a página congelada com a referência (sha256 dos 36 arquivos servidos no
+# govbr-eval). Fontes e páginas de destino em LF, como no índice; as duas marcas em CRLF, como foram medidas.
+cadastro-pais.html -text
+src/cadastro-pais/** -text
+public/cadastro-pais/comportamento.js -text
+public/cadastro-pais/marca-govbr.svg text eol=crlf
+public/cadastro-pais/marca-govbr-negativa.svg text eol=crlf
+public/administracao.html -text
+public/minha-conta.html -text
+public/paises-importadores.html -text
+public/servicos-defesa.html -text
